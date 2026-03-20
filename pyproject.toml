@@ -115,10 +115,8 @@ python -m ipykernel install --user --name "conda_braket" --display-name "conda_b
 pytest --dist worksteal -n logical -ra -v --durations=0 --test-mitiq test/integ_tests/error_mitigation/ {args}
 """
 
-# TODO: combine installs to single line; numpy version clash until mitiq updates to >=2.x
 test-dry-run= """ 
-pip install -r requirements.txt --force-reinstall
-pip install -r extra/requirements-mitiq.txt --dry-run
+pip install -r requirements.txt -r extra/requirements-mitiq.txt --dry-run
 """
  
 [tool.pytest.ini_options]
